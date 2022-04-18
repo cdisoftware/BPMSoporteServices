@@ -1,0 +1,4 @@
+com\cdi\com\BPMSoporte\BPMSoporteAplication.class
+META-INF\spring-configuration-metadata.json
+com\cdi\com\BPMSoporte\Comun\FileStorageProperties.class
+com\cdi\com\BPMSoporte\Controller\Controller.class
