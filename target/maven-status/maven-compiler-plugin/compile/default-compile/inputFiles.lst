@@ -2,11 +2,14 @@ C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\B
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\BPMSoporteAplication.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\RecuperarListaEVENTOSSoporteEntity.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaEVENTOSSoporteServiceImplementacion.java
+C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\RecuperarEmpresasEntity.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\BpmNet_ConsultarsoporteService.java
+C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarEmpresasServiceImplementacion.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaEstadoSoporteService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaUsuariosReportandoService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Comun\FileStorageProperties.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaUsuariosReportandoServiceImplementacion.java
+C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarEmpresasService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaPrioridadService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaImputacionSoporteServiceImplementacion.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaClienteSoporteService.java

@@ -20,13 +20,14 @@ import org.springframework.stereotype.Service;
  * @author Janus
  */
 @Service
-public class RecuperarListaEVENTOSSoporteServiceImplementacion implements RecuperarListaEVENTOSSoporteService{
+public class RecuperarListaEVENTOSSoporteServiceImplementacion implements RecuperarListaEVENTOSSoporteService {
+
     @PersistenceContext
     private EntityManager repositorio;
 
     @Override
     public List<RecuperarListaEVENTOSSoporteEntity> ConsultaEventoSoporte() {
-         try {
+        try {
             StoredProcedureQuery consBpmSoporte = repositorio.createNamedStoredProcedureQuery("RecuperarListaEVENTOSSoporte");
             return consBpmSoporte.getResultList();
         } catch (Exception e) {
@@ -35,6 +36,5 @@ public class RecuperarListaEVENTOSSoporteServiceImplementacion implements Recupe
             return list;
         }
     }
-    
-    
+
 }

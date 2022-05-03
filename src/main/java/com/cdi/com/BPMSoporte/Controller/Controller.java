@@ -1,6 +1,7 @@
 package com.cdi.com.BPMSoporte.Controller;
 
 import com.cdi.com.BPMSoporte.Entity.BpmNet_ConsultarsoporteEntity;
+import com.cdi.com.BPMSoporte.Entity.RecuperarEmpresasEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaClienteSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaEVENTOSSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaEstadoSoporteEntity;
@@ -10,6 +11,7 @@ import com.cdi.com.BPMSoporte.Entity.RecuperarListaPrioridadEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaSolicitudEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaUsuariosReportandoEntity;
 import com.cdi.com.BPMSoporte.Service.BpmNet_ConsultarsoporteService;
+import com.cdi.com.BPMSoporte.Service.RecuperarEmpresasService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaClienteSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaEVENTOSSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaEstadoSoporteService;
@@ -59,6 +61,9 @@ public class Controller {
 
     @Autowired
     RecuperarListaUsuariosReportandoService serviceRecuperarListaUsuariosReportandoService;
+    
+    @Autowired
+    RecuperarEmpresasService serviceRecuperarEmpresasService;
 
     @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}")
     public List<BpmNet_ConsultarsoporteEntity> ConsultaBackup(
@@ -121,5 +126,10 @@ public class Controller {
             @PathVariable String NOM,
             @PathVariable String CLIENT) {
         return serviceRecuperarListaUsuariosReportandoService.ConsultaEventoSoporte(NOM, CLIENT);
+    }
+    
+    @GetMapping("/RecuperaEmpresas")
+    public List<RecuperarEmpresasEntity> Empresas() {
+        return serviceRecuperarEmpresasService.ConsultaEmpresasSoporte();
     }
 }

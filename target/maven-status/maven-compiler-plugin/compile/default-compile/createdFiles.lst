@@ -27,5 +27,8 @@ com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaModuloSoporteServiceI
 com\cdi\com\BPMSoporte\Service\RecuperarListaSolicitudService.class
 com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaSolicitudServiceImplementacion.class
 com\cdi\com\BPMSoporte\Entity\BpmNet_ConsultarsoporteEntity.class
+com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarEmpresasServiceImplementacion.class
 com\cdi\com\BPMSoporte\Comun\FileStorageProperties.class
 com\cdi\com\BPMSoporte\Controller\Controller.class
+com\cdi\com\BPMSoporte\Service\RecuperarEmpresasService.class
+com\cdi\com\BPMSoporte\Entity\RecuperarEmpresasEntity.class
