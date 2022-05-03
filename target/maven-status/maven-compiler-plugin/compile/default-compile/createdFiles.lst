@@ -3,14 +3,17 @@ com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaEVENTOSSoporteService
 com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaEstadoSoporteServiceImplementacion.class
 com\cdi\com\BPMSoporte\Entity\RecuperarListaEstadoSoporteEntity.class
 com\cdi\com\BPMSoporte\Entity\RecuperarListaClienteSoporteEntity.class
+com\cdi\com\BPMSoporte\Entity\RecuperarListaImputacionSoporteEntity.class
 com\cdi\com\BPMSoporte\BPMSoporteAplication.class
 com\cdi\com\BPMSoporte\Service\RecuperarListaEVENTOSSoporteService.class
+com\cdi\com\BPMSoporte\Service\RecuperarListaImputacionSoporteService.class
 META-INF\spring-configuration-metadata.json
 com\cdi\com\BPMSoporte\Entity\RecuperarListaEVENTOSSoporteEntity.class
 com\cdi\com\BPMSoporte\Entity\BpmNet_ConsultarsoporteEntity.class
 com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaClienteSoporteServiceImplementacion.class
 com\cdi\com\BPMSoporte\Comun\FileStorageProperties.class
 com\cdi\com\BPMSoporte\Controller\Controller.class
+com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaImputacionSoporteServiceImplementacion.class
 com\cdi\com\BPMSoporte\ServiceImplementacion\BpmNet_ConsultarsoporteServiceImplementacion.class
 com\cdi\com\BPMSoporte\Service\RecuperarListaClienteSoporteService.class
 com\cdi\com\BPMSoporte\Service\RecuperarListaEstadoSoporteService.class
