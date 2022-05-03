@@ -6,11 +6,15 @@ import com.cdi.com.BPMSoporte.Entity.RecuperarListaClienteSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaEVENTOSSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaEstadoSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaImputacionSoporteEntity;
+import com.cdi.com.BPMSoporte.Entity.RecuperarListaModuloSoporteEntity;
+import com.cdi.com.BPMSoporte.Entity.RecuperarListaPrioridadEntity;
 import com.cdi.com.BPMSoporte.Service.BpmNet_ConsultarsoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaClienteSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaEVENTOSSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaEstadoSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaImputacionSoporteService;
+import com.cdi.com.BPMSoporte.Service.RecuperarListaModuloSoporteService;
+import com.cdi.com.BPMSoporte.Service.RecuperarListaPrioridadService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,6 +43,12 @@ public class Controller {
     
     @Autowired
     RecuperarListaImputacionSoporteService serviceRecuperarListaImputacionSoporteService;
+    
+    @Autowired
+    RecuperarListaModuloSoporteService serviceRecuperarListaModuloSoporteService;
+    
+    @Autowired
+    RecuperarListaPrioridadService serviceRecuperarListaPrioridadService;
     
     @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}")
     public List<BpmNet_ConsultarsoporteEntity> ConsultaBackup(
@@ -79,5 +89,15 @@ public class Controller {
     @GetMapping("/RecuperaImputacion")
     public List<RecuperarListaImputacionSoporteEntity> Imputacion() {
         return serviceRecuperarListaImputacionSoporteService.ConsultaImputacionSoporte();
+    }
+    
+    @GetMapping("/RecuperaModulo")
+    public List<RecuperarListaModuloSoporteEntity> Modulo() {
+        return serviceRecuperarListaModuloSoporteService.ConsultaModuloSoporte();
+    }
+    
+    @GetMapping("/RecuperaPrioridad")
+    public List<RecuperarListaPrioridadEntity> Prioridad() {
+        return serviceRecuperarListaPrioridadService.ConsultaPrioridadSoporte();
     }
 }
