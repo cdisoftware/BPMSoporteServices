@@ -1,7 +1,13 @@
-com\cdi\com\BPMSoporte\Entity\BpmNet_ConsultarsoporteEntity.class
 com\cdi\com\BPMSoporte\Service\BpmNet_ConsultarsoporteService.class
+com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaEstadoSoporteServiceImplementacion.class
+com\cdi\com\BPMSoporte\Entity\RecuperarListaEstadoSoporteEntity.class
+com\cdi\com\BPMSoporte\Entity\RecuperarListaClienteSoporteEntity.class
+com\cdi\com\BPMSoporte\BPMSoporteAplication.class
+META-INF\spring-configuration-metadata.json
+com\cdi\com\BPMSoporte\Entity\BpmNet_ConsultarsoporteEntity.class
+com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaClienteSoporteServiceImplementacion.class
 com\cdi\com\BPMSoporte\Comun\FileStorageProperties.class
 com\cdi\com\BPMSoporte\Controller\Controller.class
-com\cdi\com\BPMSoporte\BPMSoporteAplication.class
 com\cdi\com\BPMSoporte\ServiceImplementacion\BpmNet_ConsultarsoporteServiceImplementacion.class
-META-INF\spring-configuration-metadata.json
+com\cdi\com\BPMSoporte\Service\RecuperarListaClienteSoporteService.class
+com\cdi\com\BPMSoporte\Service\RecuperarListaEstadoSoporteService.class

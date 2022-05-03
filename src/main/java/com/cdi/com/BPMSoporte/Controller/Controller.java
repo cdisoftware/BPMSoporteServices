@@ -2,7 +2,11 @@
 package com.cdi.com.BPMSoporte.Controller;
 
 import com.cdi.com.BPMSoporte.Entity.BpmNet_ConsultarsoporteEntity;
+import com.cdi.com.BPMSoporte.Entity.RecuperarListaClienteSoporteEntity;
+import com.cdi.com.BPMSoporte.Entity.RecuperarListaEstadoSoporteEntity;
 import com.cdi.com.BPMSoporte.Service.BpmNet_ConsultarsoporteService;
+import com.cdi.com.BPMSoporte.Service.RecuperarListaClienteSoporteService;
+import com.cdi.com.BPMSoporte.Service.RecuperarListaEstadoSoporteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,6 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @Autowired
     BpmNet_ConsultarsoporteService serviceBpmNet_ConsultarsoporteService;
+    
+    @Autowired
+    RecuperarListaClienteSoporteService serviceRecuperarListaClienteSoporteService;
+    
+    @Autowired
+    RecuperarListaEstadoSoporteService serviceRecuperarListaEstadoSoporteService;
     
     @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}")
     public List<BpmNet_ConsultarsoporteEntity> ConsultaBackup(
@@ -39,5 +49,15 @@ public class Controller {
             @PathVariable String FECHAATENCIONFIN,
             @PathVariable String FUNCIONARIOSOLUCIO) {
         return serviceBpmNet_ConsultarsoporteService.ConsultaSoporte(TICKET, NOMBRE, TRAMITESOPORTE, FUNCIONARIOREPORTA,RAZONSOCIAL, CDESTADO, EVENTO, CDMODULO, TIPOSOLICITUD, PRIORIDAD, CDIMPUTACION, FECHAREGISTROINI, FECHAREGISTROFIN, FECHAATENCIONINI, FECHAATENCIONFIN, FUNCIONARIOSOLUCIO);
+    }
+    
+    @GetMapping("/RecuperaClientes")
+    public List<RecuperarListaClienteSoporteEntity> ConsultaSoporte() {
+        return serviceRecuperarListaClienteSoporteService.ConsultaSoporte();
+    }
+    
+    @GetMapping("/RecuperaEstado")
+    public List<RecuperarListaEstadoSoporteEntity> ConsultaEstadoSoporte() {
+        return serviceRecuperarListaEstadoSoporteService.ConsultaEstadoSoporte();
     }
 }
