@@ -3,9 +3,11 @@ package com.cdi.com.BPMSoporte.Controller;
 
 import com.cdi.com.BPMSoporte.Entity.BpmNet_ConsultarsoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaClienteSoporteEntity;
+import com.cdi.com.BPMSoporte.Entity.RecuperarListaEVENTOSSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaEstadoSoporteEntity;
 import com.cdi.com.BPMSoporte.Service.BpmNet_ConsultarsoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaClienteSoporteService;
+import com.cdi.com.BPMSoporte.Service.RecuperarListaEVENTOSSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaEstadoSoporteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class Controller {
     
     @Autowired
     RecuperarListaEstadoSoporteService serviceRecuperarListaEstadoSoporteService;
+    
+    @Autowired
+    RecuperarListaEVENTOSSoporteService serviceRecuperarListaEVENTOSSoporteService;
     
     @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}")
     public List<BpmNet_ConsultarsoporteEntity> ConsultaBackup(
@@ -59,5 +64,10 @@ public class Controller {
     @GetMapping("/RecuperaEstado")
     public List<RecuperarListaEstadoSoporteEntity> ConsultaEstadoSoporte() {
         return serviceRecuperarListaEstadoSoporteService.ConsultaEstadoSoporte();
+    }
+    
+    @GetMapping("/RecuperaEventos")
+    public List<RecuperarListaEVENTOSSoporteEntity> ConsultaEventoSoporte() {
+        return serviceRecuperarListaEVENTOSSoporteService.ConsultaEventoSoporte();
     }
 }
