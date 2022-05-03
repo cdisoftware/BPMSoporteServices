@@ -8,6 +8,7 @@ import com.cdi.com.BPMSoporte.Entity.RecuperarListaEstadoSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaImputacionSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaModuloSoporteEntity;
 import com.cdi.com.BPMSoporte.Entity.RecuperarListaPrioridadEntity;
+import com.cdi.com.BPMSoporte.Entity.RecuperarListaSolicitudEntity;
 import com.cdi.com.BPMSoporte.Service.BpmNet_ConsultarsoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaClienteSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaEVENTOSSoporteService;
@@ -15,6 +16,7 @@ import com.cdi.com.BPMSoporte.Service.RecuperarListaEstadoSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaImputacionSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaModuloSoporteService;
 import com.cdi.com.BPMSoporte.Service.RecuperarListaPrioridadService;
+import com.cdi.com.BPMSoporte.Service.RecuperarListaSolicitudService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -49,6 +51,9 @@ public class Controller {
     
     @Autowired
     RecuperarListaPrioridadService serviceRecuperarListaPrioridadService;
+    
+    @Autowired
+    RecuperarListaSolicitudService serviceRecuperarListaSolicitudService;
     
     @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}")
     public List<BpmNet_ConsultarsoporteEntity> ConsultaBackup(
@@ -99,5 +104,10 @@ public class Controller {
     @GetMapping("/RecuperaPrioridad")
     public List<RecuperarListaPrioridadEntity> Prioridad() {
         return serviceRecuperarListaPrioridadService.ConsultaPrioridadSoporte();
+    }
+    
+    @GetMapping("/RecuperaSolicitud")
+    public List<RecuperarListaSolicitudEntity> Solicitud() {
+        return serviceRecuperarListaSolicitudService.ConsultaSolicitudSoporte();
     }
 }
