@@ -4,7 +4,9 @@ C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\R
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaEVENTOSSoporteServiceImplementacion.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\BpmNet_ConsultarsoporteService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaEstadoSoporteService.java
+C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaUsuariosReportandoService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Comun\FileStorageProperties.java
+C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaUsuariosReportandoServiceImplementacion.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaPrioridadService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaImputacionSoporteServiceImplementacion.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaClienteSoporteService.java
@@ -17,6 +19,7 @@ C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceI
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\RecuperarListaSolicitudEntity.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaEVENTOSSoporteService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\ServiceImplementacion\RecuperarListaEstadoSoporteServiceImplementacion.java
+C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\RecuperarListaUsuariosReportandoEntity.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\RecuperarListaModuloSoporteEntity.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Service\RecuperarListaModuloSoporteService.java
 C:\DesarolloCDI\BPMSoporteServices\src\main\java\com\cdi\com\BPMSoporte\Entity\RecuperarListaClienteSoporteEntity.java
