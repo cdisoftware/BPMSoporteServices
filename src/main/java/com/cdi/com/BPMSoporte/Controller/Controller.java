@@ -66,7 +66,7 @@ public class Controller {
     @Autowired
     RecuperarEmpresasService serviceRecuperarEmpresasService;
 
-    @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}/{NumeroResultados}")
+    @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{CDESTADO}/{EVENTO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}/{NumeroResultados}")
     public List<BpmNet_ConsultarsoporteEntity> ConsultaBackup(
             @RequestBody BpmNet_ConsultarsoporteEntity entidad,
             @PathVariable String TICKET,

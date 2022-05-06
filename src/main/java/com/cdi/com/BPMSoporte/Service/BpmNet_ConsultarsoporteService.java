@@ -13,7 +13,7 @@ import java.util.List;
  * @author Janus
  */
 public interface BpmNet_ConsultarsoporteService {
-    public List<BpmNet_ConsultarsoporteEntity> ConsultaSoporte(BpmNet_ConsultarsoporteEntity entidad, String TICKET, String NOMBRE, String TRAMITESOPORTE, String FUNCIONARIOREPORTA,
-            String CDESTADO, String EVENTO, String TIPOSOLICITUD, String PRIORIDAD, String CDIMPUTACION,
+    public List<BpmNet_ConsultarsoporteEntity> ConsultaSoporte(BpmNet_ConsultarsoporteEntity entidad, String TICKET, String NOMBRE, String TRAMITESOPORTE, String FUNCIONARIOREPORTA, String CDESTADO, 
+            String EVENTO, String TIPOSOLICITUD, String PRIORIDAD, String CDIMPUTACION,
             String FECHAREGISTROINI, String FECHAREGISTROFIN, String FECHAATENCIONINI, String FECHAATENCIONFIN, String FUNCIONARIOSOLUCIO, String NumeroResultados);
 }

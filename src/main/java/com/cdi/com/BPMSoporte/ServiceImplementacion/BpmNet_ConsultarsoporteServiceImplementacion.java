@@ -39,7 +39,7 @@ public class BpmNet_ConsultarsoporteServiceImplementacion implements BpmNet_Cons
             consBpmSoporte.registerStoredProcedureParameter("RAZONSOCIAL", String.class, ParameterMode.IN);
             consBpmSoporte.registerStoredProcedureParameter("CDESTADO", String.class, ParameterMode.IN);
             consBpmSoporte.registerStoredProcedureParameter("EVENTO", String.class, ParameterMode.IN);
-            consBpmSoporte.registerStoredProcedureParameter("CDMODULO", String.class, ParameterMode.IN);
+            consBpmSoporte.registerStoredProcedureParameter("CDMODULO", Integer.class, ParameterMode.IN);
             consBpmSoporte.registerStoredProcedureParameter("TIPOSOLICITUD", String.class, ParameterMode.IN);
             consBpmSoporte.registerStoredProcedureParameter("PRIORIDAD", String.class, ParameterMode.IN);
             consBpmSoporte.registerStoredProcedureParameter("CDIMPUTACION", String.class, ParameterMode.IN);
