@@ -21,15 +21,15 @@ import org.springframework.stereotype.Service;
  * @author Janus
  */
 @Service
-public class BpmNet_ConsultarsoporteServiceImplementacion implements BpmNet_ConsultarsoporteService{
-    
+public class BpmNet_ConsultarsoporteServiceImplementacion implements BpmNet_ConsultarsoporteService {
+
     @PersistenceContext
     private EntityManager repositorio;
 
     @Override
-    public List<BpmNet_ConsultarsoporteEntity> ConsultaSoporte(String TICKET, String NOMBRE, String TRAMITESOPORTE, String FUNCIONARIOREPORTA, String RAZONSOCIAL,
-            String CDESTADO, String EVENTO, String CDMODULO, String TIPOSOLICITUD, String PRIORIDAD, String CDIMPUTACION, String FECHAREGISTROINI, String FECHAREGISTROFIN,
-            String FECHAATENCIONINI, String FECHAATENCIONFIN, String FUNCIONARIOSOLUCIO) {
+    public List<BpmNet_ConsultarsoporteEntity> ConsultaSoporte(BpmNet_ConsultarsoporteEntity entidad, String TICKET, String NOMBRE, String TRAMITESOPORTE, String FUNCIONARIOREPORTA,
+            String CDESTADO, String EVENTO, String TIPOSOLICITUD, String PRIORIDAD, String CDIMPUTACION, String FECHAREGISTROINI, String FECHAREGISTROFIN,
+            String FECHAATENCIONINI, String FECHAATENCIONFIN, String FUNCIONARIOSOLUCIO, String NumeroResultados) {
         try {
             StoredProcedureQuery consBpmSoporte = repositorio.createNamedStoredProcedureQuery("BpmNet_Consultarsoporte");
             consBpmSoporte.registerStoredProcedureParameter("TICKET", String.class, ParameterMode.IN);
@@ -48,15 +48,16 @@ public class BpmNet_ConsultarsoporteServiceImplementacion implements BpmNet_Cons
             consBpmSoporte.registerStoredProcedureParameter("FECHAATENCIONINI", String.class, ParameterMode.IN);
             consBpmSoporte.registerStoredProcedureParameter("FECHAATENCIONFIN", String.class, ParameterMode.IN);
             consBpmSoporte.registerStoredProcedureParameter("FUNCIONARIOSOLUCIO", String.class, ParameterMode.IN);
+            consBpmSoporte.registerStoredProcedureParameter("NumerResultados", String.class, ParameterMode.IN);
 
             consBpmSoporte.setParameter("TICKET", TICKET);
             consBpmSoporte.setParameter("NOMBRE", NOMBRE);
             consBpmSoporte.setParameter("TRAMITESOPORTE", TRAMITESOPORTE);
             consBpmSoporte.setParameter("FUNCIONARIOREPORTA", FUNCIONARIOREPORTA);
-            consBpmSoporte.setParameter("RAZONSOCIAL", RAZONSOCIAL);
+            consBpmSoporte.setParameter("RAZONSOCIAL", entidad.getRAZONSOCIAL());
             consBpmSoporte.setParameter("CDESTADO", CDESTADO);
             consBpmSoporte.setParameter("EVENTO", EVENTO);
-            consBpmSoporte.setParameter("CDMODULO", CDMODULO);
+            consBpmSoporte.setParameter("CDMODULO", entidad.getCDMODULO());
             consBpmSoporte.setParameter("TIPOSOLICITUD", TIPOSOLICITUD);
             consBpmSoporte.setParameter("PRIORIDAD", PRIORIDAD);
             consBpmSoporte.setParameter("CDIMPUTACION", CDIMPUTACION);
@@ -65,6 +66,8 @@ public class BpmNet_ConsultarsoporteServiceImplementacion implements BpmNet_Cons
             consBpmSoporte.setParameter("FECHAATENCIONINI", FECHAATENCIONINI);
             consBpmSoporte.setParameter("FECHAATENCIONFIN", FECHAATENCIONFIN);
             consBpmSoporte.setParameter("FUNCIONARIOSOLUCIO", FUNCIONARIOSOLUCIO);
+                        consBpmSoporte.setParameter("NumerResultados", NumeroResultados);
+
             return consBpmSoporte.getResultList();
         } catch (Exception ex) {
             List list = new ArrayList();
@@ -72,5 +75,5 @@ public class BpmNet_ConsultarsoporteServiceImplementacion implements BpmNet_Cons
             return list;
         }
     }
-    
+
 }

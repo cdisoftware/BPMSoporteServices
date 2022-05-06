@@ -26,14 +26,11 @@ import lombok.Data;
 })
 public class RecuperarListaUsuariosReportandoEntity {
     @Id
-    @JsonProperty("ID")
-    public Integer ID;
+    @JsonProperty("NUMEROIDFN")
+    public Integer NUMEROIDFN;
 
     @JsonProperty("NOMBREFUNCIONARIO")
     public String NOMBREFUNCIONARIO;
-    
-    @JsonProperty("NUMEROIDFN")
-    public Integer NUMEROIDFN;
     
     @JsonProperty("NOMBRECLIENTE")
     public String NOMBRECLIENTE;

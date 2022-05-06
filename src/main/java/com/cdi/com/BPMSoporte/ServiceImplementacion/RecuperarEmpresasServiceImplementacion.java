@@ -10,6 +10,7 @@ import com.cdi.com.BPMSoporte.Service.RecuperarEmpresasService;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.ParameterMode;
 import javax.persistence.PersistenceContext;
 import javax.persistence.StoredProcedureQuery;
 import org.json.JSONObject;
@@ -26,9 +27,13 @@ public class RecuperarEmpresasServiceImplementacion implements RecuperarEmpresas
     private EntityManager repositorio;
 
     @Override
-    public List<RecuperarEmpresasEntity> ConsultaEmpresasSoporte() {
+    public List<RecuperarEmpresasEntity> ConsultaEmpresasSoporte(String NombreEmpresa) {
         try {
             StoredProcedureQuery consBpmSoporte = repositorio.createNamedStoredProcedureQuery("RecuperarEmpresas");
+            consBpmSoporte.registerStoredProcedureParameter("NombreEmpresa", String.class, ParameterMode.IN);
+            
+            
+            consBpmSoporte.setParameter("NombreEmpresa", NombreEmpresa);
             return consBpmSoporte.getResultList();
         } catch (Exception e) {
             List list = new ArrayList();

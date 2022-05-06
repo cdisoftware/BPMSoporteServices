@@ -13,5 +13,5 @@ import java.util.List;
  * @author Janus
  */
 public interface RecuperarEmpresasService {
-    public List<RecuperarEmpresasEntity> ConsultaEmpresasSoporte();
+    public List<RecuperarEmpresasEntity> ConsultaEmpresasSoporte(String NombreEmpresa);
 }

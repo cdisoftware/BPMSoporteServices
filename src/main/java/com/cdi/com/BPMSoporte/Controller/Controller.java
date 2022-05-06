@@ -25,6 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,20 +62,19 @@ public class Controller {
 
     @Autowired
     RecuperarListaUsuariosReportandoService serviceRecuperarListaUsuariosReportandoService;
-    
+
     @Autowired
     RecuperarEmpresasService serviceRecuperarEmpresasService;
 
-    @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}")
+    @GetMapping("/consultaSoporteBpm/{TICKET}/{NOMBRE}/{TRAMITESOPORTE}/{FUNCIONARIOREPORTA}/{RAZONSOCIAL}/{CDESTADO}/{EVENTO}/{CDMODULO}/{TIPOSOLICITUD}/{PRIORIDAD}/{CDIMPUTACION}/{FECHAREGISTROINI}/{FECHAREGISTROFIN}/{FECHAATENCIONINI}/{FECHAATENCIONFIN}/{FUNCIONARIOSOLUCIO}/{NumeroResultados}")
     public List<BpmNet_ConsultarsoporteEntity> ConsultaBackup(
+            @RequestBody BpmNet_ConsultarsoporteEntity entidad,
             @PathVariable String TICKET,
             @PathVariable String NOMBRE,
             @PathVariable String TRAMITESOPORTE,
             @PathVariable String FUNCIONARIOREPORTA,
-            @PathVariable String RAZONSOCIAL,
             @PathVariable String CDESTADO,
             @PathVariable String EVENTO,
-            @PathVariable String CDMODULO,
             @PathVariable String TIPOSOLICITUD,
             @PathVariable String PRIORIDAD,
             @PathVariable String CDIMPUTACION,
@@ -82,8 +82,9 @@ public class Controller {
             @PathVariable String FECHAREGISTROFIN,
             @PathVariable String FECHAATENCIONINI,
             @PathVariable String FECHAATENCIONFIN,
-            @PathVariable String FUNCIONARIOSOLUCIO) {
-        return serviceBpmNet_ConsultarsoporteService.ConsultaSoporte(TICKET, NOMBRE, TRAMITESOPORTE, FUNCIONARIOREPORTA, RAZONSOCIAL, CDESTADO, EVENTO, CDMODULO, TIPOSOLICITUD, PRIORIDAD, CDIMPUTACION, FECHAREGISTROINI, FECHAREGISTROFIN, FECHAATENCIONINI, FECHAATENCIONFIN, FUNCIONARIOSOLUCIO);
+            @PathVariable String FUNCIONARIOSOLUCIO,
+            @PathVariable String NumeroResultados) {
+        return serviceBpmNet_ConsultarsoporteService.ConsultaSoporte(entidad, TICKET, NOMBRE, TRAMITESOPORTE, FUNCIONARIOREPORTA, CDESTADO, EVENTO, TIPOSOLICITUD, PRIORIDAD, CDIMPUTACION, FECHAREGISTROINI, FECHAREGISTROFIN, FECHAATENCIONINI, FECHAATENCIONFIN, FUNCIONARIOSOLUCIO, NumeroResultados);
     }
 
     @GetMapping("/RecuperaClientes")
@@ -127,9 +128,10 @@ public class Controller {
             @PathVariable String CLIENT) {
         return serviceRecuperarListaUsuariosReportandoService.ConsultaEventoSoporte(NOM, CLIENT);
     }
-    
-    @GetMapping("/RecuperaEmpresas")
-    public List<RecuperarEmpresasEntity> Empresas() {
-        return serviceRecuperarEmpresasService.ConsultaEmpresasSoporte();
+
+    @GetMapping("/RecuperaEmpresas/{NombreEmpresa}")
+    public List<RecuperarEmpresasEntity> Empresas(
+            @PathVariable String NombreEmpresa) {
+        return serviceRecuperarEmpresasService.ConsultaEmpresasSoporte(NombreEmpresa);
     }
 }
