@@ -27,7 +27,7 @@ import lombok.Data;
 public class RecuperarListaClienteSoporteEntity {
     @Id
     @JsonProperty("Id")
-    public Integer Id;
+    public String Id;
     
     @JsonProperty("NUMEROID")
     public String NUMEROID;
